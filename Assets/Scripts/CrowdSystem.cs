@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class CrowdSystem : MonoBehaviour
 {
@@ -45,5 +46,10 @@ public class CrowdSystem : MonoBehaviour
     void CountRunners()
     {
         CrowdCounter.text = RunnerParent.childCount.ToString();
+    }
+
+    public float GetCrowdRadius()
+    {
+        return radius * Mathf.Sqrt(RunnerParent.childCount);
     }
 }

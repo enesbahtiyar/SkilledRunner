@@ -5,6 +5,10 @@ using UnityEngine.PlayerLoop;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("Settings")]
+    [SerializeField] CrowdSystem crowdSystem;
+    [SerializeField] float roadWidth;
+
     [Header("Move Settings")]
     [Tooltip("Adjust the slider to change the speed of the character")]
     [SerializeField] float speed;
@@ -48,6 +52,9 @@ public class PlayerController : MonoBehaviour
 
             Vector3 position = transform.position;
             position.x = xScreenDifference;
+
+            position.x = Mathf.Clamp(position.x, -roadWidth / 2 + crowdSystem.GetCrowdRadius(), roadWidth / 2 - crowdSystem.GetCrowdRadius());
+
             transform.position = position;
 
             //transform.position = clickedPlayerPosition + Vector3.right * xScreenDifference;
