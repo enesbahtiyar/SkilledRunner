@@ -1217,6 +1217,7 @@ GameObject:
   - component: {fileID: 2553622730587414473}
   - component: {fileID: 2919468048155664266}
   - component: {fileID: -4975785049503313566}
+  - component: {fileID: 7420032651989687652}
   m_Layer: 0
   m_Name: Runner
   m_TagString: Untagged
@@ -1274,6 +1275,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25e9e578156db2b4ab6da42868030a4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!136 &7420032651989687652
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7608908739555840752}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 3.0307348
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.0153674, z: 0}
 --- !u!1 &7690945242426255381
 GameObject:
   m_ObjectHideFlags: 0

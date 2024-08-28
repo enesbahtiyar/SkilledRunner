@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 using System;
 
 public class CrowdSystem : MonoBehaviour
@@ -12,19 +11,13 @@ public class CrowdSystem : MonoBehaviour
 
     [Header("Elements")]
     [SerializeField] Transform RunnerParent;
-    [SerializeField] TMP_Text CrowdCounter;
+
     [SerializeField] GameObject runnerPrefab;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
         PlaceRunners();
-        CountRunners();
     }
 
     void PlaceRunners()
@@ -44,10 +37,7 @@ public class CrowdSystem : MonoBehaviour
         return new Vector3(x, 0, z);
     }
 
-    void CountRunners()
-    {
-        CrowdCounter.text = RunnerParent.childCount.ToString();
-    }
+
 
     public float GetCrowdRadius()
     {

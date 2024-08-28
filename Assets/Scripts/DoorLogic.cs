@@ -25,16 +25,10 @@ public class DoorLogic : MonoBehaviour
 
     [SerializeField] Color bonusColor;
     [SerializeField] Color penaltyColor;
-    // Start is called before the first frame update
+
     void Start()
     {
         ConfigureDoors();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     void ConfigureDoors()

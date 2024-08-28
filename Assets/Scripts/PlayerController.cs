@@ -18,11 +18,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Vector3 clickedScreenPosition;
     [SerializeField] Vector3 clickedPlayerPosition;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+
 
     // Update is called once per frame
     void Update()
