@@ -805,10 +805,11 @@ MonoBehaviour:
   rightDoorRenderer: {fileID: 1669413988}
   rightDoorText: {fileID: 2029976517}
   leftDoorText: {fileID: 1139924572}
+  collider: {fileID: 708547141}
   rightDoorBonusType: 0
-  rightDoorAmount: 15
+  rightDoorAmount: 1
   leftDoorBonusType: 1
-  leftDoorAmount: 20
+  leftDoorAmount: 2
   bonusColor: {r: 0, g: 1, b: 0.19680619, a: 1}
   penaltyColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!65 &708547141
@@ -1310,6 +1311,7 @@ GameObject:
   - component: {fileID: 1094028931}
   - component: {fileID: 1094028930}
   - component: {fileID: 1094028932}
+  - component: {fileID: 1094028933}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1368,6 +1370,20 @@ MonoBehaviour:
   radius: 0.7
   RunnerParent: {fileID: 53332042}
   CrowdCounter: {fileID: 2000332301}
+  runnerPrefab: {fileID: 7608908739555840752, guid: c61e019f46670344089879057a2b2645, type: 3}
+--- !u!114 &1094028933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094028929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db8eafc904d377f47bb5da5f23e910f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crowdSystem: {fileID: 1094028932}
 --- !u!1 &1139924570
 GameObject:
   m_ObjectHideFlags: 0

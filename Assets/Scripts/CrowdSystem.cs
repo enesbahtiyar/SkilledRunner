@@ -73,7 +73,7 @@ public class CrowdSystem : MonoBehaviour
 
         int runnersAmount = RunnerParent.childCount;
 
-        for (int i = runnersAmount - 1; i > runnersAmount - bonusAmount; i--)
+        for (int i = runnersAmount - 1; i >= runnersAmount - bonusAmount; i--)
         {
             Transform runnerToDestroy = RunnerParent.GetChild(i);
             runnerToDestroy.SetParent(null);
