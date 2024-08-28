@@ -2,20 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
+
+public enum BonusType{ Addition, Difference}
 
 public class DoorLogic : MonoBehaviour
 {
-    enum BonusType
-    {
-        Addition,
-        Difference
-    }
 
     [Header("Elements")]
     [SerializeField] SpriteRenderer leftDoorRenderer;
     [SerializeField] SpriteRenderer rightDoorRenderer;
     [SerializeField] TMP_Text rightDoorText;
     [SerializeField] TMP_Text leftDoorText;
+    [SerializeField] Collider collider;
 
     [Header("Settings")]
     [SerializeField] BonusType rightDoorBonusType;
@@ -62,5 +61,26 @@ public class DoorLogic : MonoBehaviour
             leftDoorRenderer.color = penaltyColor;
             leftDoorText.text = "-" + leftDoorAmount;
         }
+    }
+
+    public int GetBonus(float xPosition)
+    {
+        if (xPosition > 0)
+            return rightDoorAmount;
+        else 
+            return leftDoorAmount;
+    }
+
+    public BonusType GetBonusType(float xPosition)
+    {
+        if (xPosition > 0)
+            return rightDoorBonusType;
+        else
+            return leftDoorBonusType;
+    }
+
+    public void DisableCollider()
+    {
+        collider.enabled = false;
     }
 }

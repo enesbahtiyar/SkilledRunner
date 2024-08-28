@@ -13,6 +13,7 @@ public class CrowdSystem : MonoBehaviour
     [Header("Elements")]
     [SerializeField] Transform RunnerParent;
     [SerializeField] TMP_Text CrowdCounter;
+    [SerializeField] GameObject runnerPrefab;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,5 +52,41 @@ public class CrowdSystem : MonoBehaviour
     public float GetCrowdRadius()
     {
         return radius * Mathf.Sqrt(RunnerParent.childCount);
+    }
+
+    public void ApplyBonus(BonusType bonusType, int bonusAmount)
+    {
+        if(bonusType == BonusType.Addition)
+        {
+            AddRunners(bonusAmount);
+        }
+        else if (bonusType == BonusType.Difference)
+        {
+            SubtrackRunners(bonusAmount);
+        }
+    }
+
+    private void SubtrackRunners(int bonusAmount)
+    {
+        if(bonusAmount > RunnerParent.childCount)
+            bonusAmount = RunnerParent.childCount;
+
+        int runnersAmount = RunnerParent.childCount;
+
+        for (int i = runnersAmount - 1; i > runnersAmount - bonusAmount; i--)
+        {
+            Transform runnerToDestroy = RunnerParent.GetChild(i);
+            runnerToDestroy.SetParent(null);
+
+            Destroy(runnerToDestroy.gameObject);
+        }
+    }
+
+    private void AddRunners(int bonusAmount)
+    {
+        for (int i = 0; i < bonusAmount; i++)
+        {
+            Instantiate(runnerPrefab, RunnerParent);
+        }
     }
 }
